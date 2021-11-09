@@ -40,3 +40,5 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
+          owner: ircbloqcc
+          repo: testing
