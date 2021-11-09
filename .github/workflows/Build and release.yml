@@ -14,9 +14,9 @@ jobs:
       - name: Checkout public repository
         uses: actions/checkout@v2
         with:
-          persist-credentials: false 
           repository: ircbloqcc/testing
           path: testing
+          persist-credentials: false 
       - name: Get tag name from ref
         shell: bash
         run: echo "::set-output name=tag::${GITHUB_REF#refs/tags/}"
