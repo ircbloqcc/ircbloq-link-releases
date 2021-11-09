@@ -11,6 +11,8 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
+      - name: github Token
+        run: git config --global url."https://${{ secrets.REPO_AUTH_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
       - name: Checkout public repository
         uses: actions/checkout@v2
         env:
