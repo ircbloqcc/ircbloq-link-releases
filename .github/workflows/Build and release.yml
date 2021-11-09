@@ -16,6 +16,8 @@ jobs:
         with:
           repository: ircbloqcc/testing
           path: testing
+      - name: github Token
+        run: git config --global url."https://${{ secrets.REPO_AUTH_TOKEN }}@github.com/".insteadOf https://github.com/
       - name: Get tag name from ref
         shell: bash
         run: echo "::set-output name=tag::${GITHUB_REF#refs/tags/}"
