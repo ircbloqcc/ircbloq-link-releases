@@ -15,9 +15,9 @@ jobs:
         run: git config --global url."https://${{ secrets.REPO_AUTH_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
       - name: Checkout public repository
         uses: actions/checkout@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_AUTH_TOKEN }} # This token is provided by Actions, you do not need to create your own toke
         with:
+          persist-credentials: false 
+          fetch-depth: 0 
           repository: ircbloqcc/testing
           path: testing
       - name: Get tag name from ref
