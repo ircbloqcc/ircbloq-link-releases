@@ -29,16 +29,15 @@ jobs:
       - name: Create Release
         id: create_release
         uses: ncipollo/release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_AUTH_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
           owner: ircbloqcc
           repo: testing
-          tag_name: ${{ steps.get_tag.outputs.tag }}
-          release_name: Release ${{ steps.get_tag.outputs.tag }}
+          tag: ${{ steps.get_tag.outputs.tag }}
+          name: Release ${{ steps.get_tag.outputs.tag }}
           body: |
             Changes in this Release
             - First Change
             - Second Change
           draft: true
           prerelease: false
+          token:  ${{ secrets.REPO_AUTH_TOKEN }}
