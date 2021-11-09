@@ -11,13 +11,10 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - name: github Token
-        run: git config --global url."https://${{ secrets.REPO_AUTH_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
       - name: Checkout public repository
         uses: actions/checkout@v2
         with:
           persist-credentials: false 
-          fetch-depth: 0 
           repository: ircbloqcc/testing
           path: testing
       - name: Get tag name from ref
